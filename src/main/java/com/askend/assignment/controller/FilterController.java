@@ -1,8 +1,6 @@
 package com.askend.assignment.controller;
 
-
 import com.askend.assignment.model.Filter;
-import com.askend.assignment.model.FilterCriteria;
 import com.askend.assignment.service.FilterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,13 +30,8 @@ public class FilterController {
         return filterService.createFilter(filter);
     }
 
-    @DeleteMapping("/{filterId}/criteria/{criteriaId}")
-    public ResponseEntity<Filter> deleteCriteria(@PathVariable Long filterId, @PathVariable Long criteriaId) {
-        return filterService.deleteCriteria(filterId, criteriaId);
-    }
-
-    @PostMapping("/{filterId}/criteria")
-    public ResponseEntity<Filter> addCriteria(@PathVariable Long filterId, @RequestBody FilterCriteria newCriteria) {
-        return filterService.addCriteria(filterId, newCriteria);
+    @DeleteMapping("delete/{id}")
+    public ResponseEntity<Filter> deleteFilter(@PathVariable Long id) {
+        return filterService.deleteFilter(id);
     }
 }

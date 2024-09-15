@@ -59,7 +59,7 @@ databaseChangeLog:
                   value: 'From'
               - column:
                   name: filter_value
-                  value: '25/10/2021'
+                  value: '2024-09-03'
               - column:
                   name: filter_id
                   valueNumeric: 2
